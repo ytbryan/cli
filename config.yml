@@ -1,0 +1,27 @@
+commands:
+  - name: add
+    description: "Add package to requirements.txt"
+    type: bash
+  - name: pull
+    description: "git module init && pull"
+    type: bash
+  - name: reset
+    description: "Remove venv and setup"
+    type: bash
+  - name: setup
+    description: "Runs a shell script to set up the Python virtual environment and install the requirements."
+    type: bash
+  - name: python
+    description: "[py] run python"
+    type: python
+
+  # - name: extract
+  #   description: "[py] Extract something"
+  #   type: python
+
+  # - name: new
+  #   description: "Create new item"
+  #   type: bash
+
+others:
+  - something: something

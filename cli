@@ -1,0 +1,40 @@
+#! /Users/ytbryan/.pyenv/shims/python3
+import subprocess
+import os
+import typer
+import yaml
+
+app = typer.Typer()
+
+@app.command()
+def s():
+    setup()
+
+app = typer.Typer()
+
+# Load the configuration
+script_path = os.getenv('CLI_PATH', '') 
+with open(f"{script_path}/config.yml", "r") as config_file:
+    config = yaml.safe_load(config_file)
+
+# Loop through each command in the configuration
+for command in config.get('commands', []):
+    name = command.get('name')
+    description = command.get('description', '')
+    cmd_type = command.get('type', 'bash')
+
+    def create_command(cmd_name, cmd_type):
+        def generic_function(args: str = typer.Argument(None)):
+            script_path = os.getenv('CLI_PATH', '') + "/dev/" + cmd_name
+            if cmd_type == 'bash':
+                full_command = [script_path] + (args.split() if args else [])
+                subprocess.run(full_command, check=True)
+            elif cmd_type == 'python':
+                exec(open(script_path).read(), globals())
+        return generic_function
+
+    # Dynamically create and add the command to the app
+    app.command(name=name, help=description)(create_command(name, cmd_type))
+
+if __name__ == "__main__":
+    app()
