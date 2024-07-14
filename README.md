@@ -13,13 +13,18 @@ Or the git module commands to pull all modules? Or perhaps you have more multi-s
 4. 🔋🔋🔋 Extra batteries will be included. Add on more scripts as you build along. Use an easy config file. 
 
 # Installation
-This method works. 
+1. This method works. 
 ```
 git clone https://github.com/ytbryan/cli
 #then add the export CLI_PATH of cli path.
 ```
+2. Add the repo to the PATH
 
-Does not work yet
+```bash
+export PATH="$PATH:<path_to_repo>/cli"
+```
+
+NOTE: Does not work yet
 ```
 pip install git+http://github.com/ytbryan/cli.git
 ```
