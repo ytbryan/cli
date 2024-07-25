@@ -14,6 +14,9 @@ commands:
   - name: python
     description: "[py] run python"
     type: python
+  - name: age
+    description: "Check the age of the directory if there is a .git"
+    type: bash
 
   # - name: extract
   #   description: "[py] Extract something"
@@ -23,5 +26,6 @@ commands:
   #   description: "Create new item"
   #   type: bash
 
-others:
+#run custom scripts using cli run <name>
+scripts:
   - something: something
