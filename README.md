@@ -47,6 +47,10 @@ cli --help
 ## TODO
 - [x] ship it
 - [x] add config.yml 
+- [ ] add `show` to show the content of the file
+- [ ] add alias to each command
+- [ ] add `age` to show git commits and its age
+- [ ] integrate with pyenv and pick up python version
 
 ## LICENSE
 MIT
