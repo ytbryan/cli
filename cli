@@ -3,6 +3,7 @@ import subprocess
 import os
 import typer
 import yaml
+import sys 
 
 app = typer.Typer(context_settings={"help_option_names": ["-h", "--help"]})
 
@@ -54,9 +55,10 @@ for command in config.get('commands', []):
     app.command(name=name, help=description)(create_command(name, cmd_type))
 
 
-
-
-
-
 if __name__ == "__main__":
-    app()
+    if len(sys.argv) == 1:
+        # If no arguments are provided, show help
+        app(['--help'])
+    else:
+        app()
+
