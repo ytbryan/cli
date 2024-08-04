@@ -28,4 +28,6 @@ commands:
 
 #run custom scripts using cli run <name>
 scripts:
-  - something: something
+  - name: custom
+    description: "custom python"
+    type: python
