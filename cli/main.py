@@ -17,7 +17,8 @@ def s():
     setup()
 
 # Load the configuration
-script_path = os.getenv('CLI_PATH', '')
+
+script_path = os.path.dirname(os.path.realpath(__file__))
 with open(f"{script_path}/config.yml", "r") as config_file:
     config = yaml.safe_load(config_file)
 
