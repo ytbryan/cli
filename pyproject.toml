@@ -3,12 +3,14 @@ name = "cli"
 version = "0.1.0"
 description = "a simple cli helper for everyday python projects"
 authors = ["ytbryan <ytbryan@users.noreply.github.com>"]
+license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
-typer = "^0.12.3"
+python = ">=3.8"
 
+[tool.poetry.group.dev.dependencies]
+typer = "^0.12.5"
 
 [build-system]
 requires = ["poetry-core"]
