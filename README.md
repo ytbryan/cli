@@ -19,12 +19,13 @@ git clone https://github.com/ytbryan/cli
 #then add the export CLI_PATH of cli path.
 ```
 2. Add the repo to the PATH
-
+> create a cli folder and the folder will be filled with config.yml and scripts
 ```bash
-export PATH="$PATH:<path_to_repo>/cli"
+export CLI_PATH="$PATH:<path_to_repo>/cli"
 ```
 
-NOTE: Does not work yet
+
+Alternatively
 ```
 pip install git+http://github.com/ytbryan/cli.git
 ```
@@ -46,11 +47,13 @@ cli --help
 
 ## TODO
 - [x] ship it
-- [x] add config.yml 
+- [x] add config.yml
+- [x] add `age` to show git commits and its age
 - [ ] add `show` to show the content of the file
-- [ ] add alias to each command
-- [ ] add `age` to show git commits and its age
+- [x] add alias to each command
 - [ ] integrate with pyenv and pick up python version
+- [ ] Add Procfile + Honcho
+- [ ] 
 
 ## LICENSE
 MIT
