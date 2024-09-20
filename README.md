@@ -32,7 +32,11 @@ pip install git+http://github.com/ytbryan/cli.git
 
 # Getting started
 
-## Getting Started
+`setup` does two things. It will insert the `CLI_PATH` as a location to .config.yml and the scripts if `CLI_PATH` is empty. 
+And further add cli into PATH such that cli can be used globally across projects.  
+```
+cli setup 
+```
 
 ## Set the CLI_PATH
 
